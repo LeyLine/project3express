@@ -6,6 +6,8 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var index = require('./routes/index');
 var users = require('./routes/users');
+var stylesApi = require('./routes/styles-api');
+
 const authRoutes = require('./routes/auth-routes');
 const session    = require('express-session');
 const passport   = require('passport');
@@ -46,6 +48,7 @@ app.use(cors({
 app.use('/', index);
 app.use('/', authRoutes);
 app.use('/users', users);
+app.use('/api', stylesApi);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
