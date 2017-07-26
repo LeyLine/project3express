@@ -50,11 +50,9 @@ app.use('/', index);
 app.use('/', authRoutes);
 app.use('/users', users);
 app.use('/api', stylesApi);
-app.use((req, res, next) =>{res.sendFile(__dirname + '/public/dist/index.html'); });
+app.use((req, res, next) =>{res.sendFile(__dirname + '/public/index.html'); });
 // catch 404 and forward to error handler
-app.use((req, res, next) => {
-  res.sendfile(__dirname + '/public/index.html');
-});
+
 
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
