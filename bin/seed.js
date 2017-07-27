@@ -6,7 +6,7 @@
 const mongoose = require('mongoose');
                                     // database name
                                     //    |
-mongoose.connect('mongodb://localhost/angular-auth');
+  mongoose.connect(process.env.MONGODB_URI);
                                //         |
                                // use ironshop
 
